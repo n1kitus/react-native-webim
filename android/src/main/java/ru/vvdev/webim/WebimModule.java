@@ -351,7 +351,7 @@ public class WebimModule extends ReactContextBaseJavaModule implements MessageLi
 
     private WritableMap messageToJson(Message msg) {
         final WritableMap map = Arguments.createMap();
-        map.putString("id", msg.getId().toString());
+        map.putString("id", msg.getClientSideId().toString());
         map.putDouble("time", msg.getTime());
         map.putString("type", msg.getType().toString());
         map.putString("text", msg.getText());
@@ -361,13 +361,15 @@ public class WebimModule extends ReactContextBaseJavaModule implements MessageLi
         map.putBoolean("read", msg.isReadByOperator());
         map.putBoolean("canEdit", msg.canBeEdited());
         Message.Attachment attach = msg.getAttachment();
+
         if (attach != null) {
+            Message.FileInfo attachInfo = attach.getFileInfo();
             WritableMap _att = Arguments.createMap();
-            _att.putString("contentType", attach.getContentType());
-            _att.putString("name", attach.getFileName());
+            _att.putString("contentType", attachInfo.getContentType());
+            _att.putString("name", attachInfo.getFileName());
             _att.putString("info", "attach.getImageInfo().toString()");
-            _att.putDouble("size", attach.getSize());
-            _att.putString("url", attach.getUrl());
+            _att.putDouble("size", attachInfo.getSize());
+            _att.putString("url", attachInfo.getUrl());
             map.putMap("attachment", _att);
         }
         return map;
