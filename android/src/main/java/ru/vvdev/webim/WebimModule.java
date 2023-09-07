@@ -25,17 +25,17 @@ import java.io.OutputStream;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.webimapp.android.sdk.FatalErrorHandler;
-import com.webimapp.android.sdk.Message;
-import com.webimapp.android.sdk.MessageListener;
-import com.webimapp.android.sdk.MessageStream;
-import com.webimapp.android.sdk.MessageTracker;
-import com.webimapp.android.sdk.NotFatalErrorHandler;
-import com.webimapp.android.sdk.Operator;
-import com.webimapp.android.sdk.Webim;
-import com.webimapp.android.sdk.WebimError;
-import com.webimapp.android.sdk.WebimSession;
-import com.webimapp.android.sdk.ProvidedAuthorizationTokenStateListener;
+import ru.webim.android.sdk.FatalErrorHandler;
+import ru.webim.android.sdk.Message;
+import ru.webim.android.sdk.MessageListener;
+import ru.webim.android.sdk.MessageStream;
+import ru.webim.android.sdk.MessageTracker;
+import ru.webim.android.sdk.NotFatalErrorHandler;
+import ru.webim.android.sdk.Operator;
+import ru.webim.android.sdk.Webim;
+import ru.webim.android.sdk.WebimError;
+import ru.webim.android.sdk.WebimSession;
+import ru.webim.android.sdk.ProvidedAuthorizationTokenStateListener;
 
 @SuppressWarnings("unused")
 public class WebimModule extends ReactContextBaseJavaModule implements MessageListener, ProvidedAuthorizationTokenStateListener, FatalErrorHandler, NotFatalErrorHandler {
